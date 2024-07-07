@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-//  import Style from './Calculator.module.css'
 
+ import Style from './Calculator.module.css'
 import { useState } from "react";
 
 
@@ -37,35 +36,35 @@ const Calculator =()=>{
         }
      }
  return(
-        <div>
+        <div className={Style.Calculator} >
             <h1>React Calculator</h1>
-            <input type="text" value={input}  placeholder="" readOnly/>
+            <input type="text"  className ={Style.inputBox} value={input}  placeholder="Enter Number" readOnly/>
             <div>
-                <h5>{result !== null ? result:''}</h5>
+                <h2>{result !== null ? result:''}</h2>
             </div>
-            <div>
-                <button onClick={()=>handleClick('7')}>7</button>
-                <button onClick={()=>handleClick('8')}>8</button>
-                <button onClick={()=>handleClick('9')}>9</button>
-                <button onClick={()=>handleClick('+')}>+</button>
+            <div className={Style.btn}>
+                <button className={Style.btntext} onClick={()=>handleClick('7')}>7</button>
+                <button className={Style.btntext} onClick={()=>handleClick('8')}>8</button>
+                <button className={Style.btntext} onClick={()=>handleClick('9')}>9</button>
+                <button  className={Style.btntext} onClick={()=>handleClick('+')}>+</button>
             </div>
-            <div>
-                <button onClick={()=>handleClick('6')}>6</button>
-                <button onClick={()=>handleClick('5')}>5</button>
-                <button onClick={()=>handleClick('4')}>4</button>
-                <button onClick={()=>handleClick('-')}>-</button>
+            <div className={Style.btn}>
+                <button  className={Style.btntext} onClick={()=>handleClick('6')}>6</button>
+                <button className={Style.btntext}  onClick={()=>handleClick('5')}>5</button>
+                <button  className={Style.btntext} onClick={()=>handleClick('4')}>4</button>
+                <button  className={Style.btntext} onClick={()=>handleClick('-')}>-</button>
             </div>
-            <div>
-                <button onClick={()=>handleClick('3')}>3</button>
-                <button onClick={()=>handleClick('2')}>2</button>
-                <button onClick={()=>handleClick('1')}>1</button>
-                <button onClick={()=>handleClick('*')}>*</button>
+            <div className={Style.btn}>
+                <button className={Style.btntext} onClick={()=>handleClick('3')}>3</button>
+                <button  className={Style.btntext} onClick={()=>handleClick('2')}>2</button>
+                <button  className={Style.btntext} onClick={()=>handleClick('1')}>1</button>
+                <button className={Style.btntext}  onClick={()=>handleClick('*')}>*</button>
             </div>
-            <div>
-                <button onClick={handleClear}>C</button>
-                <button onClick={()=>handleClick('0')}>0</button>
-                <button onClick={handleCalculator}>=</button>
-                <button onClick={()=>handleClick('/')}>/</button>
+            <div className={Style.btn}>
+                <button  className={Style.btntext} onClick={handleClear}>C</button>
+                <button  className={Style.btntext} onClick={()=>handleClick('0')}>0</button>
+                <button  className={Style.btntext} onClick={handleCalculator}>=</button>
+                <button  className={Style.btntext} onClick={()=>handleClick('/')}>/</button>
             </div>
 
         </div>
