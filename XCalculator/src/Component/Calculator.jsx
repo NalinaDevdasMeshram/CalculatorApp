@@ -9,28 +9,27 @@ const Calculator =()=>{
      const [ result, setResult] = useState(null);
 
      const handleClick =(value)=>{
-        if(result != null && !NaN(value)){
-           setInput(value);
-           setResult(null)
-        }else{
-            setInput((prevState)=>prevState + value)
-        }
-        
-     }
+       setInput((prevState)=>prevState + value)
+    }
      const handleClear = ()=>{
         setInput('')
         setResult(null)
      }
      const handleCalculator =()=>{
-        try{
-           setInput((prev)=>{
-             const result = eval(prev);
-            setResult(result)
-            setInput(String(result))
-           })
+    try{
+        const evaluateResult = Function(`return(${input});`)();
+         console.log(evaluateResult)
+         console.log(isNaN)
+           if(isNaN(evaluateResult)){
+              setInput('Error');
+              setResult(null);
+           }else{
+               setResult(evaluateResult)
+               setInput(String(evaluateResult))
+           }
         }
-        catch{
-           setInput(NaN)
+        catch(error){
+           setInput('Error')
            setResult(null)  
         }
      }
