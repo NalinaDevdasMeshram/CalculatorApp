@@ -22,21 +22,23 @@ const Calculator =()=>{
          console.log(isNaN)
            if(isNaN(evaluateResult)){
               setInput('Error');
-              setResult(null);
-           }else{
+             }
+             else{
                setResult(evaluateResult)
-               setInput(String(evaluateResult))
-           }
+               }
         }
         catch(error){
            setInput('Error')
-           setResult(null)  
+             
         }
      }
  return(
         <div>
             <h1>React Calculator</h1>
-            <input type="text" value={input}/>
+            <input type="text" value={input}  placeholder="" readOnly/>
+            <div>
+                <h5>{result !== null ? result:''}</h5>
+            </div>
             <div>
                 <button onClick={()=>handleClick('7')}>7</button>
                 <button onClick={()=>handleClick('8')}>8</button>
@@ -61,6 +63,9 @@ const Calculator =()=>{
                 <button onClick={handleCalculator}>=</button>
                 <button onClick={()=>handleClick('/')}>/</button>
             </div>
+            {/* <div>
+                <h5>{result!== null ? result:''}</h5>
+            </div> */}
         </div>
     )
 }
