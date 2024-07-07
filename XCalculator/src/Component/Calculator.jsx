@@ -62,7 +62,7 @@ const Calculator =()=>{
                 <button onClick={()=>handleClick('*')}>*</button>
             </div>
             <div>
-                <button onClick={handleClear}>c</button>
+                <button onClick={handleClear}>C</button>
                 <button onClick={()=>handleClick('0')}>0</button>
                 <button onClick={handleCalculator}>=</button>
                 <button onClick={()=>handleClick('/')}>/</button>
