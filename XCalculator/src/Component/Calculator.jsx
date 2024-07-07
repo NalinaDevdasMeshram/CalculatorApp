@@ -17,18 +17,22 @@ const Calculator =()=>{
      }
      const handleCalculator =()=>{
     try{
+        if(input === ''){
+            setResult('Error');
+            return;
+        }
         const evaluateResult = Function(`return(${input});`)();
          console.log(evaluateResult)
          console.log(isNaN)
            if(isNaN(evaluateResult)){
-              setInput('Error');
+              setResult('NaN');
              }
              else{
                setResult(evaluateResult)
                }
         }
         catch(error){
-           setInput('Error')
+           setResult('Error')
              
         }
      }
@@ -63,9 +67,7 @@ const Calculator =()=>{
                 <button onClick={handleCalculator}>=</button>
                 <button onClick={()=>handleClick('/')}>/</button>
             </div>
-            {/* <div>
-                <h5>{result!== null ? result:''}</h5>
-            </div> */}
+
         </div>
     )
 }
